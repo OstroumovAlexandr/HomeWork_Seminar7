@@ -1,35 +1,19 @@
-﻿// Напишите программу, которая принимает на вход число (А) и выдает сумму чисел от 1 до А
+﻿//Задача №25
+// программa, которая возводит число А в натуральную степень В
 /*
-Console.Write("Введи число: ");
-int limit = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"Сумма чисел от 1 до {limit} равна {GetSum(limit)}");
-Console.Write("Введите число: ");
-int Num = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"Сумма чисел от 1 до {Num} равна {GetSum(Num)}");
+Console.WriteLine("Введите число А: ");
+int a = int.Parse(Console.ReadLine()!);
+Console.WriteLine("Введите число B: ");
+int b = int.Parse(Console.ReadLine()!);
 
-// ----------МЕТОДЫ----------
-
-int GetSum(int A){
-    int sum = 0;
-    for(int i = 1; i<=A; i++){
-        sum += i; // sum = sum + i
-    }
-    return sum;
-}
-*/
-
-// программа которая принимает число и на выходе выдает призведение чисел от 1 до N
-/*
-Console.WriteLine("Введите число: ");
-int N = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"Произведение чисел от 1 до {N} равно {GetMultiplay(N)}");
+Console.WriteLine($"Число {a} в степени {b} равно {GetMultiplay(a,b)}");
 
 // -------Методы-------
 
-int GetMultiplay(int n){
+int GetMultiplay(int a, int b){
     int mult = 1;
-    for(int i = 1; i <= n; i++){
-        mult = mult * i;
+    for(int i = 1; i <= b; i++){
+        mult = mult * a;
     }
     return mult;
 }
@@ -37,51 +21,45 @@ int GetMultiplay(int n){
 
 
 
-// задача которая выдает количество цифр в числе
+//Задача № 27
+// программа, принимает на вход число и выдает сумму цифр в числе
 /*
 Console.WriteLine("Введите число: ");
-int N = int.Parse(Console.ReadLine()!);
-Console.WriteLine($"Количество цифр в числе {N} получается {GetNumber(N)}");
-
-string M = N.ToString();
-Console.WriteLine($"Количество цифр в числе {M} получается {GetNums(M)}");
+string num = Console.ReadLine();
+Console.WriteLine($"Сумма цифр в числе  {num} равнa {sum_of_digits(num)}");
 
 
-//--------МЕТОДЫ--------
-// метод математический
-int GetNumber(int num){
-    int count = 0;
-    if(num == 0) return 1;
-    while(num > 0){
-        count ++;
-        num = num / 10;
+int sum_of_digits(string num)
+{
+    int result = 0; 
+    int i = 0;
+    while (num.Length > i)
+    {
+        string b = num[i].ToString();
+        int a = Convert.ToInt32(b);
+        result = result + a;
+        i = i + 1;
     }
-    return count;
-}
-
-
-// метод строковый
-int GetNums(string num){
-    int a = num.Length;
-    return a;
+    return result;
 }
 */
 
 
 
-// задача которая выводит массив из 8 элементов 
+
+
+// Задача №29
+// программа, которая задает массив из 8 элементов
 /*
 int[] myArray = GetArray (8);
 Console.WriteLine($"[{String.Join(',', myArray)}]");
-
-
 
 
 // ---методы---заполнения массива
 int [] GetArray(int size){
     int[] myArray = new int [size];
     for(int i = 0; i < size; i++){
-        myArray[i] = new Random().Next(2);
+        myArray[i] = new Random().Next(1001);
     }
     return myArray;
 }
